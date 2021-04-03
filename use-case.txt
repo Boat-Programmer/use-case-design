@@ -1,0 +1,19 @@
+@startuml
+
+left to right direction
+actor "User Caller" as fc
+actor "User Answerer" as fc2
+rectangle Telephone {
+    usecase "Enter phone number" as UC1
+    usecase "Press the call button" as UC2
+    usecase "Answer the phone" as UC3
+    usecase "Network Callular" as UC4
+}
+fc --> UC1
+UC1 --> UC2
+UC2 --> UC3
+UC1 --> UC4
+UC4 --> UC3
+UC3 --> fc2
+
+@enduml

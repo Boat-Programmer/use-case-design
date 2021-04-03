@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+actor "Customer" as fc
+actor "Bank" as fc2
+rectangle ATM_Bank {
+    usecase "Insert card" as UC1
+    usecase "Enter password" as UC2
+    usecase "Check Balances" as UC3
+    usecase "Deposit Funds" as UC4
+    usecase "Withdraw Funds" as UC5
+    usecase "Transfer Funds" as UC6
+}
+
+fc --> UC1
+UC1 --> UC2
+UC2 --- UC3
+UC2 --- UC4
+UC2 --- UC5
+UC2 --- UC6
+UC3 --- fc2
+UC4 --- fc2
+UC5 --- fc2
+UC6 --- fc2
+
+@enduml
